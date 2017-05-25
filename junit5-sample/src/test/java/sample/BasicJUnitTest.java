@@ -31,8 +31,13 @@ public class BasicJUnitTest {
     }
 
     @Test
+    public void assertLambda() {
+        assertTrue(() -> library.returnTrue());
+    }
+
+    @Test
     public void assertWithMessage() {
-        assertTrue("something should return 'true'", true);
+        assertTrue(true, "something should return 'true'");
     }
 
     @Test(expected = RuntimeException.class)

@@ -12,4 +12,8 @@ public class Library {
     public void doSomethingWith(PassedDependency passed) {
         passed.something();
     }
+
+    public boolean returnTrue() {
+        return true;
+    }
 }
