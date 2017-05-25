@@ -6,61 +6,61 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BasicJUnitTest {
+class BasicJUnitTest {
 
     Library library;
 
     @BeforeAll
-    public static void setUpAll() {
+    static void setUpAll() {
     }
 
     @AfterAll
-    public static void tearDownAll() {
+    static void tearDownAll() {
     }
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         library = new Library();
     }
 
     @AfterEach
-    public void tearDown() {
+    void tearDown() {
     }
 
     @Test
-    public void somethingTrue() {
+    void somethingTrue() {
         assertTrue(true);
     }
 
     @Test
-    public void assertLambda() {
+    void assertLambda() {
         assertTrue(() -> library.returnTrue());
     }
 
     @Test
-    public void assertWithMessage() {
+    void assertWithMessage() {
         assertTrue(true, "something should return 'true'");
     }
 
     @Test
-    public void exception() {
+    void exception() {
         assertThrows(RuntimeException.class, () -> library.throwRuntimeException());
     }
 
     @Test
-    public void timeout() throws InterruptedException {
+    void timeout() throws InterruptedException {
         assertTimeout(Duration.ofSeconds(1), () -> library.timeout(5L));
     }
 
     @Test
-    public void multipleAssertions() {
+    void multipleAssertions() {
         assertNotEquals("Unexpected", "Actual");
         assertEquals("Actual", "Actual");
     }
 
     @Disabled
     @Test
-    public void disabled() {
+    void disabled() {
         fail("Should not happen");
     }
 }

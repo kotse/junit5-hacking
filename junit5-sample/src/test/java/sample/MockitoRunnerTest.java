@@ -10,7 +10,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-public class MockitoRunnerTest {
+class MockitoRunnerTest {
 
     @Mock
     LibraryDependency libraryDependency;
@@ -19,7 +19,7 @@ public class MockitoRunnerTest {
     Library library;
 
     @Test
-    public void passDependency() {
+    void passDependency() {
         PassedDependency passed = mock(PassedDependency.class);
 
         library.doSomethingWith(passed);
