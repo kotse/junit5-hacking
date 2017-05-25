@@ -2,6 +2,8 @@ package sample;
 
 import org.junit.jupiter.api.*;
 
+import java.time.Duration;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BasicJUnitTest {
@@ -45,9 +47,9 @@ public class BasicJUnitTest {
         assertThrows(RuntimeException.class, () -> library.throwRuntimeException());
     }
 
-    @Test(timeout = 10L)
+    @Test
     public void timeout() throws InterruptedException {
-        library.timeout(5L);
+        assertTimeout(Duration.ofSeconds(1), () -> library.timeout(5L));
     }
 
     @Test
