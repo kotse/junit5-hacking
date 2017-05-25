@@ -1,27 +1,27 @@
 package sample;
 
-import org.junit.*;
+import org.junit.jupiter.api.*;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class BasicJUnitTest {
 
     Library library;
 
-    @BeforeClass
+    @BeforeAll
     public static void setUpAll() {
     }
 
-    @AfterClass
+    @AfterAll
     public static void tearDownAll() {
     }
 
-    @Before
+    @BeforeEach
     public void setUp() {
         library = new Library();
     }
 
-    @After
+    @AfterEach
     public void tearDown() {
     }
 
@@ -51,7 +51,7 @@ public class BasicJUnitTest {
         assertEquals("Actual", "Actual");
     }
 
-    @Ignore
+    @Disabled
     @Test
     public void disabled() {
         fail("Should not happen");
