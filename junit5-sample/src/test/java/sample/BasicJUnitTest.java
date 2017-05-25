@@ -40,9 +40,9 @@ public class BasicJUnitTest {
         assertTrue(true, "something should return 'true'");
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test
     public void exception() {
-        library.throwRuntimeException();
+        assertThrows(RuntimeException.class, () -> library.throwRuntimeException());
     }
 
     @Test(timeout = 10L)
