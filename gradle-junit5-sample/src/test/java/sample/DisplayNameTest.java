@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 class DisplayNameTest {
 
     @Test
-    void notUsingDisplayNameIsNotEasyToRead() {}
+    void testWhenWrittenInCamelCaseAreNotEasyToRead() {}
 
     @Test
-    void not_using_display_name_better_but_not_quite_ok() {}
+    void test_written_using_underscore_as_word_delimiter_are_kinda_ok() {}
 
     @DisplayName("using @DisplayName")
     @Nested

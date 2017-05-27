@@ -8,9 +8,10 @@ import org.mockito.Mock;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyZeroInteractions;
 
 @ExtendWith(MockitoExtension.class)
-class MockitoRunnerTest {
+class MockitoTest {
 
     @Mock
     LibraryDependency libraryDependency;
@@ -19,11 +20,9 @@ class MockitoRunnerTest {
     Library library;
 
     @Test
-    void passDependency() {
-        PassedDependency passed = mock(PassedDependency.class);
+    void verifyDependency() {
+        library.doSometingWithDependency();
 
-        library.doSomethingWith(passed);
-
-        verify(passed).something();
+        verify(libraryDependency).something();
     }
 }
