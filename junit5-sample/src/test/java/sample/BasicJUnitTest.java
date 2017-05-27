@@ -55,8 +55,8 @@ class BasicJUnitTest {
     @Test
     void multipleAssertions() {
         assertAll(
-                () -> assertNotEquals("Unexpected", "Actual"),
-                () -> assertEquals("Actual", "Actual")
+                () -> assertEquals(1, 2),
+                () -> assertEquals("String", "Another String")
         );
     }
 
