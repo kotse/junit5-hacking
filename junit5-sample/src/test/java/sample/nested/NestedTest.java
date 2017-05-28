@@ -27,11 +27,15 @@ class BookAddedTest {
 
         @DisplayName("amount++")
         @Test
-        void whenBookExistsThenIncrementAmount() {}
+        void whenBookExistsThenIncrementAmount() {
+            when(books.exists("Effective Java")).thenReturn(true);
+        }
 
         @DisplayName("check amount > limit")
         @Test
-        void whenBookExistsThenCheckAmountMoreThenN() {}
+        void whenBookExistsThenCheckAmountMoreThenN() {
+            when(books.exists("Effective Java")).thenReturn(true);
+        }
     }
 
     @DisplayName("when book doesn't exists")
