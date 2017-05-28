@@ -2,6 +2,7 @@ package sample.nested;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import sample.Library;
 
@@ -20,19 +21,29 @@ class BookAddedTest {
         library = new Library(books);
     }
 
-    @DisplayName("When book exists -> amount++")
-    @Test
-    void whenBookExistsThenIncrementAmount() {}
+    @DisplayName("when book exists")
+    @Nested
+    class whenBookExists {
 
-    @DisplayName("When book exists -> check amount > limit")
-    @Test
-    void whenBookExistsThenCheckAmountMoreThenN() {}
+        @DisplayName("amount++")
+        @Test
+        void whenBookExistsThenIncrementAmount() {}
 
-    @DisplayName("When book doesn't exist -> create it")
-    @Test
-    void whenBookDoesNotExistsThenCreateABook() {}
+        @DisplayName("check amount > limit")
+        @Test
+        void whenBookExistsThenCheckAmountMoreThenN() {}
+    }
 
-    @DisplayName("When book doesn't exist -> send new book notification")
-    @Test
-    void whenBookDoesNotExistsThenSendNewBookNotification() {}
+    @DisplayName("when book doesn't exists")
+    @Nested
+    class whenBookDoesNotExists {
+
+        @DisplayName("create book")
+        @Test
+        void whenBookDoesNotExistsThenCreateABook() {}
+
+        @DisplayName("send new book notification")
+        @Test
+        void whenBookDoesNotExistsThenSendNewBookNotification() {}
+    }
 }
