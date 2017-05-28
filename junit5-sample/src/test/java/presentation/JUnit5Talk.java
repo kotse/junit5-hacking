@@ -36,7 +36,7 @@ class JUnit5Talk {
     @DisplayName("Tool Integration")
     @ParameterizedTest(name = "{0}")
     @ValueSource(strings = {
-            "Taken into account during initial JUnit 4 development",
+            "Not taken into account during initial JUnit development",
             "IDEs and build tools found “ways” to integrate",
             "Brittle, obstacle for development"
     })
