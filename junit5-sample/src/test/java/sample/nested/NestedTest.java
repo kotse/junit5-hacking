@@ -25,16 +25,19 @@ class BookAddedTest {
     @Nested
     class whenBookExists {
 
+        @BeforeEach
+        void setUp() {
+            when(books.exists("Effective Java")).thenReturn(true);
+        }
+
         @DisplayName("amount++")
         @Test
         void whenBookExistsThenIncrementAmount() {
-            when(books.exists("Effective Java")).thenReturn(true);
         }
 
         @DisplayName("check amount > limit")
         @Test
         void whenBookExistsThenCheckAmountMoreThenN() {
-            when(books.exists("Effective Java")).thenReturn(true);
         }
     }
 
