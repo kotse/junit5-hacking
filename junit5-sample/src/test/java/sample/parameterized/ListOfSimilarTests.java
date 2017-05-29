@@ -11,16 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  */
 public class ListOfSimilarTests {
 
-    @Test
-    void strIsLessThenTenChar() {
-        lessThenTenChar("str");
-    }
-
-    @Test
-    void StringIsLessThenTenChar() {
-        lessThenTenChar("String");
-    }
-
     @ParameterizedTest
     @ValueSource(strings = {"str", "Strings"})
     void lessThenTenChar(String s) {
