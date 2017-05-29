@@ -11,13 +11,15 @@ public class ListOfSimilarTests {
 
     @Test
     void strIsLessThenTenChar() {
-        int value = "str".length();
-        assertTrue(value < 10);
+        lessThenTenChar("str");
     }
 
     @Test
     void StringIsLessThenTenChar() {
-        int value = "String".length();
-        assertTrue(value < 10);
+        lessThenTenChar("String");
+    }
+
+    private void lessThenTenChar(String s) {
+        assertTrue(s.length() < 10);
     }
 }
