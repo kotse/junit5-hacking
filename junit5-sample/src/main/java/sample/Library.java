@@ -20,8 +20,8 @@ public class Library {
         this.books = books;
     }
 
-    public void throwRuntimeException() {
-        throw new RuntimeException();
+    public void throwRuntimeException(String message) {
+        throw new RuntimeException(message);
     }
 
     public void timeout(long millis) throws InterruptedException {

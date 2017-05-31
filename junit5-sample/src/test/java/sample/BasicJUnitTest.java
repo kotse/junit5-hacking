@@ -44,7 +44,11 @@ class BasicJUnitTest {
 
     @Test
     void exception() {
-        assertThrows(RuntimeException.class, () -> library.throwRuntimeException());
+        RuntimeException exceptionThrown = assertThrows(RuntimeException.class, () -> {
+            library.throwRuntimeException("message");
+        });
+
+        assertEquals("message", exceptionThrown.getMessage());
     }
 
     @Test
