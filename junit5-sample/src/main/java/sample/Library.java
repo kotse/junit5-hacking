@@ -6,18 +6,10 @@ import sample.nested.Books;
 public class Library {
 
     LibraryDependency dependency;
-    private Books books;
 
-    public Library() {
-    }
 
     public Library(LibraryDependency dependency) {
         this.dependency = dependency;
-    }
-
-    public Library(Books books) {
-
-        this.books = books;
     }
 
     public void throwRuntimeException(String message) {

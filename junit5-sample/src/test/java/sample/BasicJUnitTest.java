@@ -20,7 +20,7 @@ class BasicJUnitTest {
 
     @BeforeEach
     void setUp() {
-        library = new Library();
+        library = new Library(new LibraryDependency());
     }
 
     @AfterEach
@@ -56,12 +56,23 @@ class BasicJUnitTest {
         assertTimeout(Duration.ofSeconds(1), () -> library.timeout(5L));
     }
 
+    @Disabled
     @Test
     void multipleAssertions() {
+
+        String s = null;
         assertAll(
-                () -> assertEquals(1, 2),
-                () -> assertEquals("String", "Another String")
+
+                () -> assertEquals("String", "Another String"),
+        () -> assertEquals("", "something")
         );
+    }
+
+    @Disabled
+    @Test
+    void multipleAssertionsOld() {
+        assertEquals(1, 2);
+        assertEquals("String", "Another String");
     }
 
     @Disabled

@@ -1,5 +1,6 @@
 package presentation;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -33,6 +34,7 @@ class JUnit5Talk {
 
     }
 
+    @Disabled
     @DisplayName("Tool Integration")
     @ParameterizedTest(name = "{0}")
     @ValueSource(strings = {
