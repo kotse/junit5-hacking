@@ -54,10 +54,28 @@ class JUnit5Talk {
     void junit5Goal() {
     }
 
+
+    @DisplayName("Some extensions points")
+    @ParameterizedTest(name = "{0}")
+    @ValueSource(strings = {
+            "ExecutionCondition",
+            "ParameterResolver",
+            "TestInstancePostProcessor",
+            "BeforeAllCallback",
+            "BeforeEachCallback",
+            "BeforeTestExecutionCallback",
+            "AfterTestExecutionCallback",
+            "AfterEachCallback",
+            "AfterAllCallback",
+            "TestExecutionExceptionHandler"
+    })
+    void extensionPoints() {
+    }
+
     @DisplayName("Other features")
     @ParameterizedTest(name = "{0}")
     @ValueSource(strings = {
-            "Parameter in test methods",
+            "Composite annotation support",
             "Dynamic tests",
             "Tagging",
             "Repeated tests",
@@ -65,6 +83,5 @@ class JUnit5Talk {
     })
     void otherFeatures() {
     }
-
 
 }
